@@ -1,0 +1,51 @@
+create new project------------------------------
+
+composer create-project laravel/laravel example-app
+
+cd example-app
+
+run project ---------------------------------------
+ 
+php artisan serve
+
+
+create controller---------------------------------------
+
+php artisan make:controller NameController
+
+app - Http - Controller
+
+
+
+create database----------------------------
+
+edit .env file--------
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel_simple_crud_app
+DB_USERNAME=root
+DB_PASSWORD=
+
+crate mode----- meya ekawachanen gasiya yuthuya-------------------
+
+php artisan make:model Name -m
+
+-------edit migration file in create table------------------
+
+  public function up(): void
+    {
+        Schema::create('students', function (Blueprint $table) {
+            $table->id();
+            $table->string('fist_name');
+            $table->string('last_name');
+            $table->string('contact_no')->nullable();
+            $table->string('address');
+            $table->string('birthday');
+            $table->timestamps();
+        });
+    }
+
+-----------------------------run code---create data base in table-------
+php artisan migrate
